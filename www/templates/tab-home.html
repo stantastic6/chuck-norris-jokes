@@ -1,0 +1,24 @@
+<ion-view>
+  <ion-content class="padding">
+    <div class="text-center">
+      <img ng-src="img/chuck.png">
+    </div>
+    
+    <div class="list card">
+      <div class="item item-divider">Did you know...</div>
+      <div class="item item-body">
+        <div ng-bind-html="joke">
+          {{joke}}
+        </div>
+      </div>
+    </div>
+    
+    <!-- REFRESH BUTTON FOR SHAKE ALTERNATIVE-->
+
+    <br><br><div class="text-center row-center">
+      <button class="button button-energized" ng-click="newJoke()">
+        Get More Chuck
+      </button>
+    </div>
+  </ion-content>
+</ion-view>
