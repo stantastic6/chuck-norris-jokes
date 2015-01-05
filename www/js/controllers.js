@@ -23,10 +23,12 @@ angular.module('jokes.controllers', [])
   }
 })
 
-.controller('HistoryCtrl', function($scope, Jokes, $ionicModal) {
+.controller('HistoryCtrl', function($scope, Jokes, $ionicPopup) {
   $scope.jokes = Jokes.jokeHistory();
 
   $scope.clicker = function(joke) {
-    console.log(joke);
+    var alertPopup = $ionicPopup.alert({
+      template: joke
+    });
   };
 })
