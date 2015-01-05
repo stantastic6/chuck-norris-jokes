@@ -6,14 +6,14 @@ angular.module('jokes.controllers', [])
     $scope.joke = data.value.joke;
     Jokes.addJoke($scope.joke);
   });
-  
+
   $scope.newJoke = function(){
     Jokes.getJoke().then(function(data){
       $scope.joke = data.value.joke;
       Jokes.addJoke($scope.joke);
     });
   }
-  
+
   document.addEventListener("deviceready", function() {
     shake.startWatch(onShake);
   });
@@ -21,15 +21,12 @@ angular.module('jokes.controllers', [])
   var onShake = function() {
     $scope.newJoke();
   }
-  
-
 })
 
-.controller('HistoryCtrl', function($scope, Jokes) {
+.controller('HistoryCtrl', function($scope, Jokes, $ionicModal) {
   $scope.jokes = Jokes.jokeHistory();
-  
+
   $scope.clicker = function(joke) {
     console.log(joke);
   };
 })
-
