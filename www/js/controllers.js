@@ -1,4 +1,4 @@
-angular.module('jokes.controllers', [])
+angular.module('jokes.controllers', ['ionic'])
 
 .controller('HomeCtrl', function($scope, $cordovaDeviceMotion, Jokes) {
 
@@ -9,9 +9,12 @@ angular.module('jokes.controllers', [])
 
   $scope.newJoke = function(){
     Jokes.getJoke().then(function(data){
+      //Assign joke to be displayed and add it to joke history
       $scope.joke = data.value.joke;
       Jokes.addJoke($scope.joke);
-    });
+    }); 
+
+    $scope.$broadcast('scroll.refreshComplete');
   }
 
   document.addEventListener("deviceready", function() {

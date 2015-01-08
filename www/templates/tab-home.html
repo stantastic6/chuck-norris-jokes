@@ -1,5 +1,10 @@
 <ion-view>
   <ion-content class="padding">
+    <ion-refresher
+      pulling-text="Pull for another joke..."
+      on-refresh="newJoke()">
+    </ion-refresher>
+    
     <div class="text-center">
       <img ng-src="img/chuck.png">
     </div>
