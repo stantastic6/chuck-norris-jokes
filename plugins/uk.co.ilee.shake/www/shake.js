@@ -3,7 +3,7 @@ module.exports = (function () {
     "use strict";
     var shake = {},
         watchId = null,
-        options = { frequency: 30 },
+        options = { frequency: 300 },
         previousAcceleration = { x: null, y: null, z: null },
         shakeCallBack = null;
 
